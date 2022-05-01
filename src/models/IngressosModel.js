@@ -1,4 +1,4 @@
-class BebidasModel {
+class IngressosModel {
 
     constructor(id, produto, preco){
         this.id = id
@@ -8,4 +8,4 @@ class BebidasModel {
  
  }
  
- export default BebidasModel
+ export default IngressosModel
