@@ -49,5 +49,5 @@ URL do projeto: `https://projetofinal_pub.herokuapp.com/`
 # Equipe 
  <li> Bruna Leardini (https://github.com/bleardini) </li> 
  <li> Lucas Mendonça (https://github.com/lucasmendonc)</li>
- <li> Paloma Barros (https://github.com/PamBarros)</li> 
+ <li> Paloma Barros (https://github.com/pamBarros)</li> 
  <li> Patrícia Milane (https://github.com/patmilane)</li> 
