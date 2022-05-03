@@ -5,22 +5,14 @@ import DatabaseMetodos from "../DAO/DatabaseMetodos.js"
 class Bebidas{
     static routers(app){
         app.get("/bebidas", async (req, res)=>{
-<<<<<<< Updated upstream
-            const response = await DatabaseMetodos.listarTodosIngressos()
-=======
             const response = await DatabaseMetodos.listarTodasBebidas()
->>>>>>> Stashed changes
             res.status(200).json(response)
         })
 
         app.get("/bebidas/:id", async (req, res)=>{
             const {id} = req.params;
             try{
-<<<<<<< Updated upstream
-                    let response = await DatabaseMetodos.listaIngressoPorID(id);
-=======
                     let response = await DatabaseMetodos.listaBebidaPorID(id);
->>>>>>> Stashed changes
                     res.status(200).json(response)
             } catch (e){
                 res.status(400).json({erro: e.message})
@@ -67,9 +59,4 @@ class Bebidas{
     }
 }
 
-<<<<<<< Updated upstream
 export default Bebidas
-
-=======
-export default Bebidas
->>>>>>> Stashed changes
