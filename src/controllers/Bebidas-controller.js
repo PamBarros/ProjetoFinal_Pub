@@ -4,12 +4,12 @@ import DatabaseMetodos from "../DAO/DatabaseMetodos.js"
 
 class Bebidas{
     static routers(app){
-        app.get("/bebidas", async (req, res)=>{
+        app.get("/bebida", async (req, res)=>{
             const response = await DatabaseMetodos.listarTodasBebidas()
             res.status(200).json(response)
         })
 
-        app.get("/bebidas/:id", async (req, res)=>{
+        app.get("/bebida/:id", async (req, res)=>{
             const {id} = req.params;
             try{
                     let response = await DatabaseMetodos.listaBebidaPorID(id);
@@ -19,7 +19,7 @@ class Bebidas{
             }
         })
 
-        app.post("/bebidas", async (req, res)=> {
+        app.post("/bebida", async (req, res)=> {
             try{
                 if(Validacoes.validaPreco(req.body.preco)){
                 const usuario = new BebidasModel(...Object.values(req.body))
@@ -33,7 +33,7 @@ class Bebidas{
             }
         })
 
-        app.put("/bebidas/:id", async (req, res)=>{
+        app.put("/bebida/:id", async (req, res)=>{
             try {
                 if (Validacoes.validaPreco(req.body.preco)) {
                     const cliente = req.body;
@@ -47,7 +47,7 @@ class Bebidas{
             }
         })
 
-        app.delete("/bebidas/:id", async (req, res)=>{
+        app.delete("/bebida/:id", async (req, res)=>{
             try{
                 const response = await DatabaseMetodos.deletaBebidaPorID(req.params.id)
                 res.status(200).json(response)
