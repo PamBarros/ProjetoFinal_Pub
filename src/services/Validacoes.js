@@ -19,19 +19,14 @@ class Validacoes {
             return false
         }
     }
-    static validaEmail(email) {
-        user = email.value.substring(0, email.value.indexOf("@")); // verificando se no parametro email existe o @
-        domain = email.value.substring(email.value.indexOf("@") + 1, email.value.length);
-        if ((user.length >= 1) &&
-            (domain.length >= 3) &&
-            (user.search("@") == -1) &&
-            (domain.search("@") == -1) &&
-            (user.search(" ") == -1) &&
-            (domain.search(" ") == -1) &&
-            (user.search(" ") == -1) &&
-            (domain.search(".") != -1) &&
-            (domain.indexOf(".") >= 1) &&
-            (domain.lastIndexOf(".") < domain.length - 1)) {
+    /**
+     * 
+     * @param {string} email 
+     * @returns boolean
+     */
+     static validaEmail(email){
+        const reg = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
+        if(reg.test(email)){
             return true
         } else {
             return false
