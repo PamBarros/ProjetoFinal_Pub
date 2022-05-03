@@ -4,30 +4,22 @@ import DatabaseMetodos from "../DAO/DatabaseMetodos.js"
 
 class Bebidas{
     static routers(app){
-        app.get("/bebidas", async (req, res)=>{
-<<<<<<< Updated upstream
-            const response = await DatabaseMetodos.listarTodosIngressos()
-=======
+        app.get("/bebida", async (req, res)=>{
             const response = await DatabaseMetodos.listarTodasBebidas()
->>>>>>> Stashed changes
             res.status(200).json(response)
         })
 
-        app.get("/bebidas/:id", async (req, res)=>{
+        app.get("/bebida/:id", async (req, res)=>{
             const {id} = req.params;
             try{
-<<<<<<< Updated upstream
-                    let response = await DatabaseMetodos.listaIngressoPorID(id);
-=======
                     let response = await DatabaseMetodos.listaBebidaPorID(id);
->>>>>>> Stashed changes
                     res.status(200).json(response)
             } catch (e){
                 res.status(400).json({erro: e.message})
             }
         })
 
-        app.post("/bebidas", async (req, res)=> {
+        app.post("/bebida", async (req, res)=> {
             try{
                 if(Validacoes.validaPreco(req.body.preco)){
                 const usuario = new BebidasModel(...Object.values(req.body))
@@ -41,7 +33,7 @@ class Bebidas{
             }
         })
 
-        app.put("/bebidas/:id", async (req, res)=>{
+        app.put("/bebida/:id", async (req, res)=>{
             try {
                 if (Validacoes.validaPreco(req.body.preco)) {
                     const cliente = req.body;
@@ -55,7 +47,7 @@ class Bebidas{
             }
         })
 
-        app.delete("/bebidas/:id", async (req, res)=>{
+        app.delete("/bebida/:id", async (req, res)=>{
             try{
                 const response = await DatabaseMetodos.deletaBebidaPorID(req.params.id)
                 res.status(200).json(response)
@@ -67,9 +59,4 @@ class Bebidas{
     }
 }
 
-<<<<<<< Updated upstream
 export default Bebidas
-
-=======
-export default Bebidas
->>>>>>> Stashed changes
