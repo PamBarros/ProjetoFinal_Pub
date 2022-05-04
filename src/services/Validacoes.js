@@ -25,8 +25,9 @@ class Validacoes {
      * @returns boolean
      */
      static validaEmail(email){
-        const reg = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
-        if(reg.test(email)){
+        const em = email.toString
+        const er = (/^[A-Za-z0-9_\-\.]+@[A-Za-z0-9_\-\.]{2,}\.[A-Za-z0-9]{2,}(\.[A-Za-z0-9])?/);
+        if(!er.test(em)){
             return true
         } else {
             return false
