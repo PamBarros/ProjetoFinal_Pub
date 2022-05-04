@@ -21,7 +21,7 @@ class Usuarios{
 
         app.post("/usuario", async (req, res)=> {
             try{
-                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaTelefone(req.body.telefone)){
+                if(Validacoes.validaNome(req.body.nome) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaEmail(req.body.email)){
                 const usuario = new UsuariosModel(...Object.values(req.body))
                 const response = await DatabaseMetodos.popularUsuario(usuario)
                 res.status(201).json(response)
@@ -35,7 +35,7 @@ class Usuarios{
 
         app.put("/usuario/:id", async (req, res)=>{
             try {
-                if (Validacoes.validaNome(req.body.nome) && Validacoes.validaTelefone(req.body.telefone)) {
+                if (Validacoes.validaNome(req.body.nome) && Validacoes.validaTelefone(req.body.telefone) && Validacoes.validaEmail(req.body.email)) {
                     const cliente = req.body;
                     const response = await DatabaseMetodos.atualizaUsuarioPorID(cliente, req.params.id)
                     res.status(200).json(response)
