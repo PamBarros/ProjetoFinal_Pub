@@ -25,7 +25,7 @@
 git clone https://github.com/PamBarros/ProjetoFinal_Pub.git
 ```
 
-<p>2. Entre na pasta correspondente através do terminal: </p>
+<p>2. Entre na pasta correspondente através do terminal do VSCode: </p>
 
 ```cd
 cd ProjetoFinal_Pub
@@ -35,13 +35,26 @@ cd ProjetoFinal_Pub
 ```npm
 npm install
 ```
+
+<p>4. Após instalar, rode o projeto com o seguinte comando: </p>
+
+```npm
+npm start
+```
+
+<p>5. Assim, a API abrirá em seu navegador e poderá ser consultada com as rotas apresentadas no topico seguinte. Exemplo: </p>
+
+```javascript
+http://localhost:1337/usuario
+```
+
 <br>
 
 ## :link:	 Acessar projeto online :link:	 
 
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
-URL do projeto: `https://projeto-pub.herokuapp.com/`
+URL do projeto: [ACESSAR API](https://projeto-pub.herokuapp.com/)
 
 <br>
 
@@ -54,6 +67,46 @@ URL do projeto: `https://projeto-pub.herokuapp.com/`
 <li>/ingresso </li>
 <li>/petiscos </li>
 <li>/bebida </li>
+<br>
+ 
+ ## :link:	As entidadas cadastradas nas rotas utilizadas no projeto foram modeladas da seguinte forma em nosso banco de dados :link:	 
+ 
+ - Rota usuarios
+ ```javascript
+  {
+    id: INTEGER PRIMARY KEY,
+    nome: VARCHAR,
+    email: VARCHAR,
+    telefone: VARCHAR
+  }
+ ```
+
+- Rota bebidas
+```Javascript
+  {
+    id: INTEGER PRIMARY KEY,
+    produto: VARCHAR,
+    preco: FLOAT
+  }
+```
+ 
+- Rota petiscos
+```Javascript
+  {
+    id: INTEGER PRIMARY KEY,
+    produto: VARCHAR,
+    preco: FLOAT
+  }
+```
+- Rota ingresso
+```Javascript
+  {
+    id: INTEGER PRIMARY KEY,
+    categoria: VARCHAR,
+    preco: FLOAT
+  }
+```
+ 
 <br>
  
 # :small_blue_diamond:	Equipe :small_blue_diamond:	
